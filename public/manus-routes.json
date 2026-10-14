@@ -1,0 +1,1 @@
+{"routes":[{"path":"/","title":"Erick Durães Connect — Entrar"},{"path":"/dashboard","title":"Erick Durães Connect — Painel"},{"path":"/c/:uid","title":"Erick Durães Connect — Cartão"},{"path":"/t/:uid","title":"Erick Durães Connect — Destino"}]}

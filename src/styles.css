@@ -1,0 +1,354 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Erick Durães Connect — monochrome identity taken from the official logo:
+   pure black field, white/silver serif letterforms, a single starlight glint. */
+
+@theme inline {
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-card: "DM Serif Display", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-silver: var(--silver);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0 0 0);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.115 0 0);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.13 0 0);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: oklch(0.97 0 0);
+  --primary-foreground: oklch(0.1 0 0);
+  --secondary: oklch(0.18 0 0);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.19 0 0);
+  --muted-foreground: oklch(0.72 0 0);
+  --accent: oklch(0.23 0 0);
+  --accent-foreground: oklch(0.97 0 0);
+  --destructive: oklch(0.62 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --success: oklch(0.78 0.12 160);
+  --silver: oklch(0.84 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 28%);
+  --ring: oklch(0.84 0 0);
+  --chart-1: oklch(0.95 0 0);
+  --chart-2: oklch(0.78 0 0);
+  --chart-3: oklch(0.6 0 0);
+  --chart-4: oklch(0.45 0 0);
+  --chart-5: oklch(0.32 0 0);
+  --sidebar: oklch(0.1 0 0);
+  --sidebar-foreground: oklch(0.97 0 0);
+  --sidebar-primary: oklch(0.97 0 0);
+  --sidebar-primary-foreground: oklch(0.1 0 0);
+  --sidebar-accent: oklch(0.18 0 0);
+  --sidebar-accent-foreground: oklch(0.97 0 0);
+  --sidebar-border: oklch(1 0 0 / 9%);
+  --sidebar-ring: oklch(0.84 0 0);
+
+}
+
+/* Tema claro opcional: superfícies neutras e texto carvão, mantendo o cartão físico original. */
+.light {
+  color-scheme: light;
+  --background: oklch(0.985 0.003 270);
+  --foreground: oklch(0.22 0.012 270);
+  --card: oklch(0.96 0.004 270);
+  --card-foreground: oklch(0.22 0.012 270);
+  --popover: oklch(0.995 0.002 270);
+  --popover-foreground: oklch(0.22 0.012 270);
+  --primary: oklch(0.24 0.012 270);
+  --primary-foreground: oklch(0.985 0.003 270);
+  --secondary: oklch(0.94 0.006 270);
+  --secondary-foreground: oklch(0.26 0.012 270);
+  --muted: oklch(0.94 0.006 270);
+  --muted-foreground: oklch(0.49 0.012 270);
+  --accent: oklch(0.91 0.008 270);
+  --accent-foreground: oklch(0.22 0.012 270);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.99 0.002 270);
+  --success: oklch(0.49 0.12 160);
+  --silver: oklch(0.56 0.008 270);
+  --border: oklch(0.22 0.012 270 / 12%);
+  --input: oklch(0.22 0.012 270 / 18%);
+  --ring: oklch(0.54 0.02 270);
+  --chart-1: oklch(0.3 0.02 270);
+  --chart-2: oklch(0.46 0.02 270);
+  --chart-3: oklch(0.58 0.02 270);
+  --chart-4: oklch(0.69 0.02 270);
+  --chart-5: oklch(0.8 0.02 270);
+  --sidebar: oklch(0.965 0.004 270);
+  --sidebar-foreground: oklch(0.22 0.012 270);
+  --sidebar-primary: oklch(0.24 0.012 270);
+  --sidebar-primary-foreground: oklch(0.985 0.003 270);
+  --sidebar-accent: oklch(0.92 0.006 270);
+  --sidebar-accent-foreground: oklch(0.22 0.012 270);
+  --sidebar-border: oklch(0.22 0.012 270 / 12%);
+  --sidebar-ring: oklch(0.54 0.02 270);
+}
+
+html.dark { color-scheme: dark; }
+html.light .ed-logo { filter: invert(1); }
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html {
+    background: var(--color-background);
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+    text-wrap: balance;
+    scroll-margin-top: 5rem;
+  }
+  p { text-wrap: pretty; }
+  a, button, [role="button"], input, select, textarea, label { touch-action: manipulation; }
+  :focus-visible { outline: 2px solid var(--color-ring); outline-offset: 3px; }
+  ::selection { background: oklch(0.97 0 0); color: oklch(0.1 0 0); }
+  select { background-color: var(--color-background); color: var(--color-foreground); }
+  @media (pointer: fine) { html { overscroll-behavior: none; } }
+}
+
+/* Type roles (fluid). Two sizes do the visible work: display and text. */
+@utility text-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 9vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+@utility text-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+@utility text-figure {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+/* Sentence-case label (replaces the old tiny uppercase eyebrow). */
+@utility label-sm {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-muted-foreground);
+}
+@utility surface {
+  background-color: var(--color-card);
+  border-radius: var(--radius-2xl);
+}
+@utility skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  &:focus { transform: translateY(0); }
+}
+
+/* Entrance: parts of a screen rise in, staggered. Content is visible without JS/animation. */
+@keyframes ed-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ed-twinkle {
+  0%, 100% { opacity: 0.7; transform: scale(0.92) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.08) rotate(8deg); }
+}
+@keyframes ed-bar {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@utility rise {
+  animation: ed-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+@utility bar-grow {
+  transform-origin: bottom;
+  animation: ed-bar 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 14ms);
+}
+@utility ed-glint {
+  animation: ed-twinkle 5s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rise, .bar-grow, .ed-glint { animation: none; }
+  * { scroll-behavior: auto !important; }
+}
+
+/* Brilho prateado nos números e títulos grandes (ecoa as fitas do cartão). */
+.sheen {
+  background: linear-gradient(180deg, var(--color-foreground) 20%, color-mix(in oklch, var(--color-foreground) 55%, transparent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ───────────────────────── Efeitos e movimento ───────────────────────── */
+html { scroll-behavior: smooth; }
+
+/* Fundo do login: luz prateada à deriva + malha de pontos. */
+@keyframes ed-drift { to { transform: translate3d(4%, 3%, 0) rotate(6deg) scale(1.08); } }
+.aurora {
+  position: absolute; inset: -20%; pointer-events: none; filter: blur(36px);
+  background:
+    radial-gradient(40% 35% at 22% 28%, color-mix(in oklch, var(--color-foreground) 12%, transparent), transparent 70%),
+    radial-gradient(34% 30% at 78% 66%, color-mix(in oklch, var(--color-foreground) 9%, transparent), transparent 70%),
+    radial-gradient(28% 28% at 55% 12%, color-mix(in oklch, var(--color-foreground) 7%, transparent), transparent 70%);
+  animation: ed-drift 24s ease-in-out infinite alternate;
+}
+.dotgrid {
+  pointer-events: none;
+  background-image: radial-gradient(color-mix(in oklch, var(--color-foreground) 22%, transparent) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: radial-gradient(70% 60% at 40% 45%, #000 20%, transparent 75%);
+}
+
+/* Ondas de aproximação (NFC) atrás do cartão. */
+@keyframes ed-ring { 0% { transform: scale(0.55); opacity: 0; } 20% { opacity: 0.55; } 100% { transform: scale(1.7); opacity: 0; } }
+.nfc-ring {
+  position: absolute; border-radius: 9999px; pointer-events: none; opacity: 0;
+  border: 1px solid color-mix(in oklch, var(--color-foreground) 45%, transparent);
+  animation: ed-ring 4.8s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
+  animation-delay: calc(var(--d, 0) * 1.5s);
+}
+@keyframes ed-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.float { animation: ed-float 7s ease-in-out infinite; }
+
+/* Cartão que acompanha o ponteiro (inclinação 3D + reflexo). */
+.tilt {
+  transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: transform;
+}
+.tilt[data-hot] { transition-duration: 0.12s; }
+.tilt::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), oklch(1 0 0 / 0.22), transparent 46%);
+  opacity: var(--go, 0); transition: opacity 0.35s;
+}
+
+/* Título que se revela palavra por palavra (uma única sequência de entrada). */
+@keyframes ed-word { from { opacity: 0; filter: blur(14px); transform: translateY(0.35em); } to { opacity: 1; filter: blur(0); transform: none; } }
+.word { display: inline-block; animation: ed-word 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; animation-delay: calc(var(--i, 0) * 120ms + 150ms); }
+
+/* Painel de vidro. */
+.glass {
+  position: relative;
+  background: color-mix(in oklch, var(--color-card) 72%, transparent);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2); backdrop-filter: blur(20px) saturate(1.2);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 40px 90px -40px oklch(0 0 0 / 0.7), inset 0 1px 0 color-mix(in oklch, var(--color-foreground) 14%, transparent);
+}
+
+/* Brilho que atravessa o botão no hover. */
+.btn-shine { position: relative; overflow: hidden; isolation: isolate; }
+.btn-shine::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; transform: translateX(-120%) skewX(-18deg);
+  background: linear-gradient(90deg, transparent, oklch(1 0 0 / 0.38), transparent);
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.btn-shine:hover:not(:disabled)::after { transform: translateX(120%) skewX(-18deg); }
+
+/* Campo com ícone: o ícone acende quando o campo está em foco. */
+.field-icon { transition: color 0.2s; }
+.field:focus-within .field-icon { color: var(--color-foreground); }
+.field input { transition: box-shadow 0.25s, border-color 0.25s; }
+.field input:focus-visible { outline: none; border-color: var(--color-foreground); box-shadow: 0 0 0 4px color-mix(in oklch, var(--color-foreground) 14%, transparent); }
+
+@keyframes ed-shake { 10%, 90% { transform: translateX(-2px); } 20%, 80% { transform: translateX(4px); } 30%, 50%, 70% { transform: translateX(-7px); } 40%, 60% { transform: translateX(7px); } }
+.shake { animation: ed-shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
+
+/* Saída suave ao entrar no painel. */
+.leaving { opacity: 0; transform: scale(0.985); transition: opacity 0.38s ease, transform 0.38s ease; }
+
+/* Seções que aparecem ao rolar a página. */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.reveal.is-in { opacity: 1; transform: none; }
+
+/* Cartões de modo: foco de luz que segue o cursor + pulso no modo em uso. */
+.spotlight { position: relative; overflow: hidden; }
+.spotlight::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.3s;
+  background: radial-gradient(18rem circle at var(--mx, 50%) var(--my, 50%), color-mix(in oklch, var(--color-foreground) 12%, transparent), transparent 60%);
+}
+.spotlight:hover::before { opacity: 1; }
+@keyframes ed-pulse { 0% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--color-success) 60%, transparent); } 100% { box-shadow: 0 0 0 9px transparent; } }
+.live-dot { animation: ed-pulse 2s ease-out infinite; }
+@keyframes ed-pop { from { opacity: 0; transform: scale(0.96) translateY(10px); } to { opacity: 1; transform: none; } }
+.pop { animation: ed-pop 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora, .nfc-ring, .float, .word, .shake, .live-dot, .pop { animation: none !important; opacity: 1; }
+  .nfc-ring { opacity: 0 !important; }
+  .tilt { transform: none !important; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn-shine::after { display: none; }
+}
